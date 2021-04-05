@@ -15,16 +15,16 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
-
+const navEl = document.querySelector('#gallery');
 const makeGalleryMarkup = ({url, alt}) => {
     console.log(images);
     return `
     <li>
-       <img url = '${url}' alt = '${alt}' width = "350"/>
+       <img src = '${url}' alt = '${alt}' width = "640" height = "380"/>
         </li>`;
 };
-const navEl = document.querySelector('#gallery');
+
 const makeGalleryMarkupRows = images.map(makeGalleryMarkup)
     .join('');
-navEl.insertAdjacentHTML('afterbegin', makeGalleryMarkupRows);
+navEl.insertAdjacentHTML('beforeend', makeGalleryMarkupRows);
 console.log(makeGalleryMarkup(images[0]));
